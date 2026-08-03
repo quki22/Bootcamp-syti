@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Компьютерный клуб BOOTCAMP в Петропавловске по адресу Сабита Муканова, 55. Мощные игровые компьютеры, VIP-зоны и турниры.">
+    <meta name="keywords" content="компьютерный клуб, BOOTCAMP, Петропавловск, игровой клуб, киберспорт, CS2, Dota 2">
+
+    <meta property="og:title" content="BOOTCAMP — компьютерный клуб в Петропавловске">
+    <meta property="og:description" content="Современный компьютерный клуб с 48 мощными игровыми компьютерами, VIP-зонами и профессиональным оборудованием.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bootcamp-club.kz">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <title>BOOTCAMP — компьютерный клуб в Петропавловске</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#" class="logo" aria-label="BOOTCAMP — на главную">
+                <img src="images/bootcamp-wordmark.png" alt="BOOTCAMP" class="logo__wordmark">
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Главная навигация">
+                <ul class="nav__list">
+                    <li><a href="#hero" class="nav__link">Главная</a></li>
+                    <li><a href="#map" class="nav__link">Карта клуба</a></li>
+                    <li><a href="#tariffs" class="nav__link">Тарифы</a></li>
+                    <li><a href="#equipment" class="nav__link">Оборудование</a></li>
+                    <li><a href="#gallery" class="nav__link">Галерея</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero__bg" aria-hidden="true">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="container hero__content">
+            <div class="hero__badge fade-in">
+                <span class="hero__badge-dot"></span>
+                Работаем круглосуточно
+            </div>
+            <h1 class="sr-only">BOOTCAMP — твоя территория игры</h1>
+            <div class="hero__brand fade-in">
+                <img src="images/bootcamp-full-logo.png" alt="BOOT CAMP" class="hero__logo">
+            </div>
+            <div class="hero__kicker fade-in">ТВОЯ ТЕРРИТОРИЯ ИГРЫ</div>
+            <p class="hero__subtitle fade-in">
+                Современный компьютерный клуб в Петропавловске. Мощные компьютеры, профессиональное оборудование и комфортная игровая атмосфера.
+            </p>
+            <div class="hero__buttons fade-in">
+                <a href="#map" class="btn btn--primary btn--lg">Посмотреть игровые места</a>
+                <a href="https://t.me/BOOTCAMPBookingBot" class="btn btn--outline btn--lg" target="_blank" rel="noopener">Бот бронирования мест</a>
+            </div>
+            <div class="hero__stats fade-in">
+                <div class="hero__stat">
+                    <span class="hero__stat-number">48</span>
+                    <span class="hero__stat-label">игровых компьютеров</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">4</span>
+                    <span class="hero__stat-label">игровые зоны</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">500</span>
+                    <span class="hero__stat-label">Гц мониторы в VIP</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">24/7</span>
+                    <span class="hero__stat-label">режим работы</span>
+                </div>
+            </div>
+            <div class="hero__address fade-in">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Казахстан, г. Петропавловск, ул. Сабита Муканова, 55
+            </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <div class="hero__scroll-mouse">
+                <div class="hero__scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- КАРТА КЛУБА -->
+        <section class="section map-section" id="map">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Карта клуба</span>
+                    <h2 class="section__title">Выбери своё игровое место</h2>
+                    <p class="section__desc">48 мощных компьютеров в четырёх зонах. Нажми на место, чтобы посмотреть характеристики.</p>
+                </div>
+
+                <div class="filters">
+                    <div class="filters__group">
+                        <span class="filters__label">По зоне:</span>
+                        <div class="filters__buttons" id="zoneFilters">
+                            <button class="filter-btn filter-btn--active" data-filter="all" data-type="zone">Все зоны</button>
+                            <button class="filter-btn" data-filter="Standard" data-type="zone">Standard</button>
+                            <button class="filter-btn" data-filter="Standard+" data-type="zone">Standard+</button>
+                            <button class="filter-btn" data-filter="VIP 1" data-type="zone">VIP 1</button>
+                            <button class="filter-btn" data-filter="VIP 2" data-type="zone">VIP 2</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-map" id="clubMap"></div>
+            </div>
+        </section>
+
+        <!-- ТАРИФЫ -->
+        <section class="section tariffs-section" id="tariffs">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Тарифы</span>
+                    <h2 class="section__title">Актуальные цены</h2>
+                    <p class="section__desc">Выбери зону и подходящий пакет. Чем больше время — тем выгоднее.</p>
+                </div>
+
+                <div class="tariffs-grid tariffs-grid--4">
+                    <!-- Standard -->
+                    <article class="tariff-card">
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">Standard</h3>
+                            <span class="tariff-card__seats">20 мест</span>
+                        </div>
+                        <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 000 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>2 500 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>4 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>4 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>2 500 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>3 500 ₸</strong></div>
+                        </div>
+                    </article>
+
+                    <!-- Standard+ -->
+                    <article class="tariff-card">
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">Standard+</h3>
+                            <span class="tariff-card__seats">20 мест</span>
+                        </div>
+                        <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 100 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>2 800 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>5 000 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>5 000 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>2 800 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>4 000 ₸</strong></div>
+                        </div>
+                    </article>
+
+                    <!-- VIP 1 -->
+                    <article class="tariff-card tariff-card--featured">
+                        <div class="tariff-card__badge">TOP</div>
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">VIP 1</h3>
+                            <span class="tariff-card__seats">5 мест</span>
+                        </div>
+                        <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 200 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>3 000 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>5 300 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>5 300 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>3 000 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>4 500 ₸</strong></div>
+                        </div>
+                    </article>
+
+                    <!-- VIP 2 -->
+                    <article class="tariff-card tariff-card--elite">
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">VIP 2</h3>
+                            <span class="tariff-card__seats">3 места</span>
+                        </div>
+                        <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 700 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>3 800 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>6 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>6 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>3 800 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>5 000 ₸</strong></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ОБОРУДОВАНИЕ -->
+        <section class="section equipment-section" id="equipment">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Оборудование</span>
+                    <h2 class="section__title">Профессиональное железо</h2>
+                    <p class="section__desc">Только топовые комплектующие и периферия для максимального комфорта.</p>
+                </div>
+
+                <div class="equipment-grid equipment-grid--4">
+                    <article class="equipment-card">
+                        <div class="equipment-card__zone">Standard</div>
+                        <h3 class="equipment-card__title">20 посадочных мест</h3>
+                        <ul class="equipment-card__list">
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>ASUS 27" (280 Hz)</span></div></li>
+                            <li><span>🖱️</span><div><strong>Мышь</strong><span>SteelSeries Aerox 3</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins Core PBT</span></div></li>
+                            <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud III</span></div></li>
+                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4060</span></div></li>
+                            <li><span>⚡</span><div><strong>Процессор</strong><span>Intel Core i5-12400F</span></div></li>
+                            <li><span>💾</span><div><strong>ОЗУ</strong><span>16 GB</span></div></li>
+                            <li><span>🪑</span><div><strong>Кресло</strong><span>DXRacer Prince</span></div></li>
+                        </ul>
+                    </article>
+
+                    <article class="equipment-card">
+                        <div class="equipment-card__zone">Standard+</div>
+                        <h3 class="equipment-card__title">20 посадочных мест</h3>
+                        <ul class="equipment-card__list">
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25" (360 Hz)</span></div></li>
+                            <li><span>🖱️</span><div><strong>Мышь</strong><span>Lamzu Atlantis OG V2 Pro (беспроводные)</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins Core PBT</span></div></li>
+                            <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud Alpha (беспроводные)</span></div></li>
+                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4060 Ti</span></div></li>
+                            <li><span>⚡</span><div><strong>Процессор</strong><span>AMD Ryzen 5 7600X</span></div></li>
+                            <li><span>💾</span><div><strong>ОЗУ</strong><span>32 GB</span></div></li>
+                            <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat Luna</span></div></li>
+                        </ul>
+                    </article>
+
+                    <article class="equipment-card equipment-card--featured">
+                        <div class="equipment-card__zone">VIP 1</div>
+                        <h3 class="equipment-card__title">5 посадочных мест</h3>
+                        <ul class="equipment-card__list">
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>ASUS 25" (380 Hz)</span></div></li>
+                            <li><span>🖱️</span><div><strong>Мышь</strong><span>Lamzu Atlantis OG V2 Pro (беспроводные)</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>Logitech G Pro</span></div></li>
+                            <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud Alpha (беспроводные)</span></div></li>
+                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4070</span></div></li>
+                            <li><span>⚡</span><div><strong>Процессор</strong><span>Intel Core i5-13400F</span></div></li>
+                            <li><span>💾</span><div><strong>ОЗУ</strong><span>16 GB</span></div></li>
+                            <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat Kaiser 2 Big Pillow</span></div></li>
+                        </ul>
+                    </article>
+
+                    <article class="equipment-card equipment-card--elite">
+                        <div class="equipment-card__zone">VIP 2</div>
+                        <h3 class="equipment-card__title">3 посадочных места</h3>
+                        <ul class="equipment-card__list">
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25" (500 Hz)</span></div></li>
+                            <li><span>🖱️</span><div><strong>Мышь</strong><span>Logitech G Pro X Superlight 2 (беспроводные)</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>Logitech G Pro</span></div></li>
+                            <li><span>🎧</span><div><strong>Наушники</strong><span>Logitech G Pro X2 Lightspeed (беспроводные)</span></div></li>
+                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4070 Ti</span></div></li>
+                            <li><span>⚡</span><div><strong>Процессор</strong><span>Intel Core i7-13700F</span></div></li>
+                            <li><span>💾</span><div><strong>ОЗУ</strong><span>32 GB</span></div></li>
+                            <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat Kaiser 2 Big Pillow</span></div></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ГАЛЕРЕЯ -->
+        <section class="section gallery-section" id="gallery">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Галерея</span>
+                    <h2 class="section__title">Фото клуба</h2>
+                    <p class="section__desc">Загляни внутрь BOOTCAMP — оцени атмосферу и оборудование.</p>
+                </div>
+
+                
+                <div class="gallery" id="galleryGrid">
+                    <div class="gallery__item" data-index="0">
+                        <img src="images/club-real-1.jpg" alt="Ресепшен и входная зона компьютерного клуба BOOTCAMP" loading="lazy">
+                        <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
+                    </div>
+                    <div class="gallery__item" data-index="1">
+                        <img src="images/club-real-2.jpg" alt="PlayStation-зона и посадочные места для отдыха" loading="lazy">
+                        <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
+                    </div>
+                    <div class="gallery__item" data-index="2">
+                        <img src="images/club-real-3.jpg" alt="Зона отдыха и интерьер клуба BOOTCAMP" loading="lazy">
+                        <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
+                    </div>
+                    <div class="gallery__item" data-index="3">
+                        <img src="images/club-real-4.jpg" alt="Игровые места BOOTCAMP с неоновой подсветкой" loading="lazy">
+                        <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
+                    </div>
+                    <div class="gallery__item" data-index="4">
+                        <img src="images/club-real-5.jpg" alt="Лаунж-зона и интерьер компьютерного клуба BOOTCAMP" loading="lazy">
+                        <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section class="section contacts-section" id="contacts">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Контакты</span>
+                    <h2 class="section__title">Как нас найти</h2>
+                </div>
+
+                <div class="contacts-grid">
+                    <div class="contacts-info">
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon">📍</div>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>Казахстан, г. Петропавловск<br>ул. Сабита Муканова, 55</p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon">📞</div>
+                            <div>
+                                <h4>Телефон / WhatsApp</h4>
+                                <p><a href="tel:+77770150156">+7 (777) 015-01-56</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon">📸</div>
+                            <div>
+                                <h4>Instagram</h4>
+                                <p><a href="https://instagram.com/bootcamp.15" target="_blank" rel="noopener">@bootcamp.15</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon">🤖</div>
+                            <div>
+                                <h4>Telegram-бот бронирования</h4>
+                                <p><a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">@BOOTCAMPBookingBot</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon">🕐</div>
+                            <div>
+                                <h4>Режим работы</h4>
+                                <p>Круглосуточно — 24/7</p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-actions">
+                            <a href="tel:+77770150156" class="btn btn--primary"><span>📞</span> Позвонить</a>
+                            <a href="https://wa.me/77770150156" class="btn btn--outline" target="_blank" rel="noopener"><span>💬</span> Написать в WhatsApp</a>
+                            <a href="https://instagram.com/bootcamp.15" class="btn btn--secondary" target="_blank" rel="noopener"><span>📸</span> Instagram</a>
+                            <a href="https://t.me/BOOTCAMPBookingBot" class="btn btn--primary" target="_blank" rel="noopener"><span>🤖</span> Бот бронирования</a>
+                            <a href="https://go.2gis.com/q2POe" class="btn btn--secondary" target="_blank" rel="noopener"><span>🗺️</span> Открыть маршрут</a>
+                        </div>
+                    </div>
+                    <div class="contacts-map contacts-map--embedded">
+                        <iframe
+                            class="contacts-map__iframe"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=69.117429%2C54.858689%2C69.137429%2C54.868689&amp;layer=mapnik&amp;marker=54.863689%2C69.127429"
+                            title="Карта расположения компьютерного клуба BOOTCAMP"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                        <div class="contacts-map__panel">
+                            <div>
+                                <span class="contacts-map__badge">BOOTCAMP</span>
+                                <h3>Сабита Муканова, 55</h3>
+                                <p>Петропавловск, Казахстан</p>
+                            </div>
+                            <a href="https://go.2gis.com/q2POe"
+                               class="contacts-map__route"
+                               target="_blank"
+                               rel="noopener">Открыть в 2GIS →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="logo footer__logo">
+                        <img src="images/bootcamp-wordmark.png" alt="BOOTCAMP" class="logo__wordmark logo__wordmark--footer">
+                    </a>
+                    <p class="footer__desc">Современный компьютерный клуб в Петропавловске. 48 мощных ПК, VIP-зоны, турниры и круглосуточная работа.</p>
+                </div>
+
+                <div class="footer__nav">
+                    <h4 class="footer__title">Навигация</h4>
+                    <ul class="footer__list">
+                        <li><a href="#hero">Главная</a></li>
+                        <li><a href="#map">Карта клуба</a></li>
+                        <li><a href="#tariffs">Тарифы</a></li>
+                        <li><a href="#equipment">Оборудование</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contacts">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li>г. Петропавловск</li>
+                        <li>ул. Сабита Муканова, 55</li>
+                        <li><a href="tel:+77770150156">+7 (777) 015-01-56</a></li>
+                        <li><a href="https://instagram.com/bootcamp.15" target="_blank">@bootcamp.15</a></li>
+                        <li><a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">@BOOTCAMPBookingBot</a></li>
+                        <li>Режим: круглосуточно</li>
+                    </ul>
+                </div>
+
+                <div class="footer__social">
+                    <h4 class="footer__title">Мы в соцсетях</h4>
+                    <div class="footer__social-links">
+                        <a href="https://instagram.com/bootcamp.15" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://wa.me/77770150156" target="_blank" rel="noopener">WhatsApp</a>
+                        <a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">Telegram Bot</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2024 BOOTCAMP. Все права защищены.</p>
+                <p>Компьютерный клуб в Петропавловске</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛКА ПК -->
+    <div class="modal" id="pcModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pcModalTitle">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+            <button class="modal__close" data-close-modal aria-label="Закрыть окно">✕</button>
+            <div class="modal__body" id="pcModalBody"></div>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА ГАЛЕРЕИ -->
+    <div class="modal modal--gallery" id="galleryModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content modal__content--gallery">
+            <button class="modal__close" data-close-modal aria-label="Закрыть окно">✕</button>
+            <img src="" alt="" class="modal__image" id="galleryModalImage">
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
