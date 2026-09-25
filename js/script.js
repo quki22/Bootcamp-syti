@@ -6,105 +6,52 @@
  */
 
 // ============================================
-// 1. ДАННЫЕ КОМПЬЮТЕРОВ (48 шт.)
+// 1. АКТУАЛЬНАЯ СХЕМА КЛУБА (61 ПК)
 // ============================================
-// ПК 01-20 — Standard (20 мест)
-// ПК 21-40 — Standard+ (20 мест)
-// ПК 41-45 — VIP 1 (5 мест)
-// ПК 46-48 — VIP 2 (3 места)
-
-const COMPUTERS_DATA = [
-    // Standard — ПК 01-20
-    ...Array.from({ length: 20 }, (_, i) => ({
-        id: i + 1,
-        name: `ПК ${String(i + 1).padStart(2, '0')}`,
-        zone: 'Standard',
-        baseStatus: 'free',
-        price: 1000,
-        cpu: 'Intel Core i5-12400F',
-        gpu: 'NVIDIA GeForce RTX 4060',
-        ram: '16 GB',
-        monitor: 'ASUS 27" (280 Hz)',
-        mouse: 'SteelSeries Aerox 3',
-        keyboard: 'HyperX Alloy Origins Core PBT',
-        headset: 'HyperX Cloud III',
-        chair: 'DXRacer Prince'
-    })),
-
-    // Standard+ — ПК 21-40
-    ...Array.from({ length: 20 }, (_, i) => ({
-        id: i + 21,
-        name: `ПК ${String(i + 21).padStart(2, '0')}`,
-        zone: 'Standard+',
-        baseStatus: 'free',
-        price: 1100,
-        cpu: 'AMD Ryzen 5 7600X',
-        gpu: 'NVIDIA GeForce RTX 4060 Ti',
-        ram: '32 GB',
-        monitor: 'Dell Alienware 25" (360 Hz)',
-        mouse: 'Lamzu Atlantis OG V2 Pro (беспроводные)',
-        keyboard: 'HyperX Alloy Origins Core PBT',
-        headset: 'HyperX Cloud Alpha (беспроводные)',
-        chair: 'AndaSeat Luna'
-    })),
-
-    // VIP 1 — ПК 41-45
-    ...Array.from({ length: 5 }, (_, i) => ({
-        id: i + 41,
-        name: `ПК ${String(i + 41).padStart(2, '0')}`,
-        zone: 'VIP 1',
-        baseStatus: 'free',
-        price: 1200,
-        cpu: 'Intel Core i5-13400F',
-        gpu: 'NVIDIA GeForce RTX 4070',
-        ram: '16 GB',
-        monitor: 'ASUS 25" (380 Hz)',
-        mouse: 'Lamzu Atlantis OG V2 Pro (беспроводные)',
-        keyboard: 'Logitech G Pro',
-        headset: 'HyperX Cloud Alpha (беспроводные)',
-        chair: 'AndaSeat Kaiser 2 Big Pillow'
-    })),
-
-    // VIP 2 — ПК 46-48
-    ...Array.from({ length: 3 }, (_, i) => ({
-        id: i + 46,
-        name: `ПК ${String(i + 46).padStart(2, '0')}`,
-        zone: 'VIP 2',
-        baseStatus: 'free',
-        price: 1700,
-        cpu: 'Intel Core i7-13700F',
-        gpu: 'NVIDIA GeForce RTX 4070 Ti',
-        ram: '32 GB',
-        monitor: 'Dell Alienware 25" (500 Hz)',
-        mouse: 'Logitech G Pro X Superlight 2 (беспроводные)',
-        keyboard: 'Logitech G Pro',
-        headset: 'Logitech G Pro X2 Lightspeed (беспроводные)',
-        chair: 'AndaSeat Kaiser 2 Big Pillow'
-    }))
+const ZONES = [
+    { name: 'Standard+', slug: 'standard-plus', numbers: [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], price: 1000 },
+    { name: 'Standard', slug: 'standard', numbers: [28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16], price: 800 },
+    { name: 'Office', slug: 'office', numbers: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39], price: 1100 },
+    { name: 'VIP 1', slug: 'vip1', numbers: [49, 50, 51, 52, 53], price: 1200 },
+    { name: 'VIP 2', slug: 'vip2', numbers: [54, 55, 56], price: 1700 },
+    { name: 'VIP 3', slug: 'vip3', numbers: [57, 58, 59, 60, 61], price: 1300 }
 ];
+
+const COMPUTERS_DATA = ZONES.flatMap(zone => zone.numbers.map((number, index) => ({
+    id: number,
+    number,
+    name: `ПК ${number}`,
+    zone: zone.name,
+    zoneSlug: zone.slug,
+    slot: index + 1,
+    status: 'unknown',
+    price: zone.price,
+    cpu: 'Уточните у администратора',
+    gpu: 'Уточните у администратора',
+    ram: 'Уточните у администратора',
+    monitor: 'Игровой монитор',
+    mouse: 'Игровая мышь',
+    keyboard: 'Игровая клавиатура',
+    headset: 'Игровая гарнитура',
+    chair: 'Игровое кресло'
+})));
 
 // ============================================
 // 2. КАРТА КЛУБА
 // ============================================
-
-let currentZoneFilter = 'all';
 
 function renderClubMap() {
     const container = document.getElementById('clubMap');
     if (!container) return;
 
     container.innerHTML = '';
-    const zones = ['Standard', 'Standard+', 'VIP 1', 'VIP 2'];
-
-    zones.forEach(zone => {
-        if (currentZoneFilter !== 'all' && currentZoneFilter !== zone) return;
-
-        const zoneComputers = COMPUTERS_DATA.filter(pc => pc.zone === zone);
+    ZONES.forEach(zone => {
+        const zoneComputers = COMPUTERS_DATA.filter(pc => pc.zone === zone.name);
         const zoneEl = document.createElement('div');
-        zoneEl.className = 'map-zone';
+        zoneEl.className = `map-zone map-zone--${zone.slug}`;
         zoneEl.innerHTML = `
             <div class="map-zone__title">
-                ${zone}
+                ${zone.name}
                 <span class="map-zone__count">${zoneComputers.length} мест</span>
             </div>
             <div class="map-zone__grid"></div>
@@ -119,8 +66,9 @@ function renderClubMap() {
 function createPcCard(pc) {
     const card = document.createElement('button');
     card.type = 'button';
-    card.className = 'pc-card';
+    card.className = `pc-card pc-card--${pc.status}`;
     card.setAttribute('data-pc-id', pc.id);
+    card.style.setProperty('--slot', pc.slot);
     card.setAttribute('aria-label', `${pc.name}, зона ${pc.zone}`);
     card.innerHTML = `
         <span class="pc-card__icon" aria-hidden="true">
@@ -143,26 +91,31 @@ function createPcCard(pc) {
                 <path d="M17 17H29" stroke="#d9f6ff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
             </svg>
         </span>
-        <span class="pc-card__number">${pc.name}</span>
+        <span class="pc-card__number">${pc.number}</span>
+        <span class="pc-card__status">${pc.status === 'free' ? 'Свободен' : pc.status === 'busy' ? 'Занят' : 'Статус неизвестен'}</span>
     `;
     card.addEventListener('click', () => openPcModal(pc));
     return card;
 }
 
-// ============================================
-// 3. ФИЛЬТР ПО ЗОНАМ
-// ============================================
-
-function initFilters() {
-    const zoneButtons = document.querySelectorAll('#zoneFilters .filter-btn');
-    zoneButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            zoneButtons.forEach(button => button.classList.remove('filter-btn--active'));
-            btn.classList.add('filter-btn--active');
-            currentZoneFilter = btn.dataset.filter;
-            renderClubMap();
-        });
-    });
+async function updateAvailability() {
+    const state = document.getElementById('availabilityState');
+    const fallback = document.getElementById('availabilityFallback');
+    const apiUrl = location.hostname === '192.168.10.55' ? '/api/status' : 'http://192.168.10.55/api/status';
+    try {
+        const response = await fetch(apiUrl, { cache: 'no-store', signal: AbortSignal.timeout(7000) });
+        if (!response.ok) throw new Error('status unavailable');
+        const data = await response.json();
+        if (!data.ok || !Array.isArray(data.computers)) throw new Error('invalid status');
+        const statusByNumber = new Map(data.computers.map(pc => [Number(pc.number), pc.status]));
+        COMPUTERS_DATA.forEach(pc => { pc.status = statusByNumber.get(pc.number) || 'unknown'; });
+        renderClubMap();
+        if (state) state.textContent = `Обновлено ${new Date(data.updatedAt || Date.now()).toLocaleTimeString('ru-RU')}`;
+        if (fallback) fallback.hidden = true;
+    } catch {
+        if (state) state.textContent = 'Живые статусы доступны в сети клуба';
+        if (fallback) fallback.hidden = false;
+    }
 }
 
 // ============================================
@@ -295,7 +248,8 @@ function initScrollReveal() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderClubMap();
-    initFilters();
+    updateAvailability();
+    setInterval(updateAvailability, 5000);
     initGallery();
     initMobileMenu();
     initHeaderScroll();
