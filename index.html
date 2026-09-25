@@ -7,7 +7,7 @@
     <meta name="keywords" content="компьютерный клуб, BOOTCAMP, Петропавловск, игровой клуб, киберспорт, CS2, Dota 2">
 
     <meta property="og:title" content="BOOTCAMP — компьютерный клуб в Петропавловске">
-    <meta property="og:description" content="Современный компьютерный клуб с 48 мощными игровыми компьютерами, VIP-зонами и профессиональным оборудованием.">
+    <meta property="og:description" content="Современный компьютерный клуб с 61 игровым компьютером, шестью залами и профессиональным оборудованием.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bootcamp-club.kz">
     <meta property="og:image" content="images/og-image.jpg">
@@ -69,15 +69,14 @@
             </p>
             <div class="hero__buttons fade-in">
                 <a href="#map" class="btn btn--primary btn--lg">Посмотреть игровые места</a>
-                <a href="https://t.me/BOOTCAMPBookingBot" class="btn btn--outline btn--lg" target="_blank" rel="noopener">Бот бронирования мест</a>
             </div>
             <div class="hero__stats fade-in">
                 <div class="hero__stat">
-                    <span class="hero__stat-number">48</span>
+                    <span class="hero__stat-number">61</span>
                     <span class="hero__stat-label">игровых компьютеров</span>
                 </div>
                 <div class="hero__stat">
-                    <span class="hero__stat-number">4</span>
+                    <span class="hero__stat-number">6</span>
                     <span class="hero__stat-label">игровые зоны</span>
                 </div>
                 <div class="hero__stat">
@@ -108,23 +107,18 @@
                 <div class="section__header">
                     <span class="section__label">Карта клуба</span>
                     <h2 class="section__title">Выбери своё игровое место</h2>
-                    <p class="section__desc">48 мощных компьютеров в четырёх зонах. Нажми на место, чтобы посмотреть характеристики.</p>
+                    <p class="section__desc">61 игровой компьютер в шести залах. Свободные и занятые места обновляются автоматически.</p>
                 </div>
 
-                <div class="filters">
-                    <div class="filters__group">
-                        <span class="filters__label">По зоне:</span>
-                        <div class="filters__buttons" id="zoneFilters">
-                            <button class="filter-btn filter-btn--active" data-filter="all" data-type="zone">Все зоны</button>
-                            <button class="filter-btn" data-filter="Standard" data-type="zone">Standard</button>
-                            <button class="filter-btn" data-filter="Standard+" data-type="zone">Standard+</button>
-                            <button class="filter-btn" data-filter="VIP 1" data-type="zone">VIP 1</button>
-                            <button class="filter-btn" data-filter="VIP 2" data-type="zone">VIP 2</button>
-                        </div>
-                    </div>
+                <div class="availability-bar">
+                    <div class="availability-legend"><span class="legend-dot legend-dot--free"></span>Свободен <span class="legend-dot legend-dot--busy"></span>Занят</div>
+                    <div class="availability-state" id="availabilityState">Подключаемся к карте клуба…</div>
                 </div>
-
                 <div class="club-map" id="clubMap"></div>
+                <div class="availability-fallback" id="availabilityFallback" hidden>
+                    Актуальные статусы доступны внутри клуба.
+                    <a href="http://192.168.10.55/" target="_blank" rel="noopener">Открыть карту занятости</a>
+                </div>
             </div>
         </section>
 
@@ -137,20 +131,20 @@
                     <p class="section__desc">Выбери зону и подходящий пакет. Чем больше время — тем выгоднее.</p>
                 </div>
 
-                <div class="tariffs-grid tariffs-grid--4">
+                <div class="tariffs-grid tariffs-grid--6">
                     <!-- Standard -->
                     <article class="tariff-card">
                         <div class="tariff-card__header">
                             <h3 class="tariff-card__name">Standard</h3>
-                            <span class="tariff-card__seats">20 мест</span>
+                            <span class="tariff-card__seats">13 мест</span>
                         </div>
                         <div class="tariff-card__prices">
-                            <div class="tariff-row"><span>1 час</span><strong>1 000 ₸</strong></div>
-                            <div class="tariff-row"><span>3 часа</span><strong>2 500 ₸</strong></div>
-                            <div class="tariff-row"><span>6 часов</span><strong>4 500 ₸</strong></div>
-                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>4 500 ₸</strong></div>
-                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>2 500 ₸</strong></div>
-                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>3 500 ₸</strong></div>
+                            <div class="tariff-row"><span>1 час</span><strong>800 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>2 000 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>3 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 08:00</small></span><strong>3 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>08:00 – 14:00</small></span><strong>2 000 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>2 500 ₸</strong></div>
                         </div>
                     </article>
 
@@ -161,18 +155,33 @@
                             <span class="tariff-card__seats">20 мест</span>
                         </div>
                         <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 000 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>2 500 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>4 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 08:00</small></span><strong>4 500 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>08:00 – 14:00</small></span><strong>2 500 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>3 500 ₸</strong></div>
+                        </div>
+                    </article>
+
+                    <!-- Office -->
+                    <article class="tariff-card tariff-card--office">
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">OFFICE</h3>
+                            <span class="tariff-card__seats">20 мест</span>
+                        </div>
+                        <div class="tariff-card__prices">
                             <div class="tariff-row"><span>1 час</span><strong>1 100 ₸</strong></div>
                             <div class="tariff-row"><span>3 часа</span><strong>2 800 ₸</strong></div>
                             <div class="tariff-row"><span>6 часов</span><strong>5 000 ₸</strong></div>
-                            <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>5 000 ₸</strong></div>
-                            <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>2 800 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 08:00</small></span><strong>5 000 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>08:00 – 14:00</small></span><strong>2 800 ₸</strong></div>
                             <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>4 000 ₸</strong></div>
                         </div>
                     </article>
 
                     <!-- VIP 1 -->
-                    <article class="tariff-card tariff-card--featured">
-                        <div class="tariff-card__badge">TOP</div>
+                    <article class="tariff-card tariff-card--vip">
                         <div class="tariff-card__header">
                             <h3 class="tariff-card__name">VIP 1</h3>
                             <span class="tariff-card__seats">5 мест</span>
@@ -200,6 +209,23 @@
                             <div class="tariff-row"><span>Ночь <small>23:00 – 8:00</small></span><strong>6 500 ₸</strong></div>
                             <div class="tariff-row"><span>Утро <small>8:00 – 14:00</small></span><strong>3 800 ₸</strong></div>
                             <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>5 000 ₸</strong></div>
+                        </div>
+                    </article>
+
+                    <!-- VIP 3 -->
+                    <article class="tariff-card tariff-card--featured">
+                        <div class="tariff-card__badge">TOP</div>
+                        <div class="tariff-card__header">
+                            <h3 class="tariff-card__name">VIP 3</h3>
+                            <span class="tariff-card__seats">5 мест</span>
+                        </div>
+                        <div class="tariff-card__prices">
+                            <div class="tariff-row"><span>1 час</span><strong>1 300 ₸</strong></div>
+                            <div class="tariff-row"><span>3 часа</span><strong>3 300 ₸</strong></div>
+                            <div class="tariff-row"><span>6 часов</span><strong>5 600 ₸</strong></div>
+                            <div class="tariff-row"><span>Ночь <small>23:00 – 08:00</small></span><strong>5 600 ₸</strong></div>
+                            <div class="tariff-row"><span>Утро <small>08:00 – 14:00</small></span><strong>3 300 ₸</strong></div>
+                            <div class="tariff-row"><span>День <small>11:00 – 18:00</small></span><strong>4 700 ₸</strong></div>
                         </div>
                     </article>
                 </div>
@@ -349,14 +375,6 @@
                         </div>
 
                         <div class="contacts-info__item">
-                            <div class="contacts-info__icon">🤖</div>
-                            <div>
-                                <h4>Telegram-бот бронирования</h4>
-                                <p><a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">@BOOTCAMPBookingBot</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contacts-info__item">
                             <div class="contacts-info__icon">🕐</div>
                             <div>
                                 <h4>Режим работы</h4>
@@ -368,7 +386,6 @@
                             <a href="tel:+77770150156" class="btn btn--primary"><span>📞</span> Позвонить</a>
                             <a href="https://wa.me/77770150156" class="btn btn--outline" target="_blank" rel="noopener"><span>💬</span> Написать в WhatsApp</a>
                             <a href="https://instagram.com/bootcamp.15" class="btn btn--secondary" target="_blank" rel="noopener"><span>📸</span> Instagram</a>
-                            <a href="https://t.me/BOOTCAMPBookingBot" class="btn btn--primary" target="_blank" rel="noopener"><span>🤖</span> Бот бронирования</a>
                             <a href="https://go.2gis.com/q2POe" class="btn btn--secondary" target="_blank" rel="noopener"><span>🗺️</span> Открыть маршрут</a>
                         </div>
                     </div>
@@ -406,7 +423,7 @@
                     <a href="#" class="logo footer__logo">
                         <img src="images/bootcamp-wordmark.png" alt="BOOTCAMP" class="logo__wordmark logo__wordmark--footer">
                     </a>
-                    <p class="footer__desc">Современный компьютерный клуб в Петропавловске. 48 мощных ПК, VIP-зоны, турниры и круглосуточная работа.</p>
+                    <p class="footer__desc">Современный компьютерный клуб в Петропавловске. 61 игровой ПК, шесть залов и круглосуточная работа.</p>
                 </div>
 
                 <div class="footer__nav">
@@ -428,7 +445,6 @@
                         <li>ул. Сабита Муканова, 55</li>
                         <li><a href="tel:+77770150156">+7 (777) 015-01-56</a></li>
                         <li><a href="https://instagram.com/bootcamp.15" target="_blank">@bootcamp.15</a></li>
-                        <li><a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">@BOOTCAMPBookingBot</a></li>
                         <li>Режим: круглосуточно</li>
                     </ul>
                 </div>
@@ -438,7 +454,6 @@
                     <div class="footer__social-links">
                         <a href="https://instagram.com/bootcamp.15" target="_blank" rel="noopener">Instagram</a>
                         <a href="https://wa.me/77770150156" target="_blank" rel="noopener">WhatsApp</a>
-                        <a href="https://t.me/BOOTCAMPBookingBot" target="_blank" rel="noopener">Telegram Bot</a>
                     </div>
                 </div>
             </div>
