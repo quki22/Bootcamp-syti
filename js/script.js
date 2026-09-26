@@ -276,7 +276,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Характеристики оборудования VIP-залов.
-const VIP_EQUIPMENT = {
+const VIP_EQUIPMENT = {    office: { monitor: 'Dell Alienware 25″, 360 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat Luna' },
+
     vip1: { monitor: 'ASUS 25″, 380 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'Logitech G Pro', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4070', cpu: 'Intel Core i5-13400F', ram: '16 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
     vip2: { monitor: 'Dell Alienware 25″, 500 Гц', mouse: 'Logitech G Pro X Superlight 2 (беспроводная)', keyboard: 'Logitech G Pro', headset: 'Logitech G Pro X2 Lightspeed (беспроводные)', gpu: 'RTX 4070 Ti', cpu: 'Intel Core i7-13700F', ram: '32 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
     vip3: { monitor: 'ASUS 24.5″, 310 Гц', mouse: 'HyperX Pulsefire Haste 2 Pro', keyboard: 'HyperX Alloy Origins PBT', headset: 'HyperX Cloud Alpha', gpu: 'RTX 5060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat LUNA' }
@@ -288,6 +289,23 @@ COMPUTERS_DATA.forEach(pc => { const equipment = VIP_EQUIPMENT[pc.zoneSlug]; if 
 document.addEventListener('DOMContentLoaded', () => {
     const equipmentGrid = document.querySelector('#equipment .equipment-grid');
     if (!equipmentGrid) return;
+    equipmentGrid.children[1]?.insertAdjacentHTML('afterend', `
+        <article class="equipment-card">
+            <div class="equipment-card__zone">OFFICE</div>
+            <h3 class="equipment-card__title">ПК 29–48 · 20 посадочных мест</h3>
+            <ul class="equipment-card__list">
+                <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25″ (360 Гц)</span></div></li>
+                <li><span>🖱️</span><div><strong>Мышь</strong><span>Lamzu Atlantis OG V2 Pro (беспроводная)</span></div></li>
+                <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins Core PBT</span></div></li>
+                <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud Alpha (беспроводные)</span></div></li>
+                <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4060 Ti</span></div></li>
+                <li><span>⚡</span><div><strong>Процессор</strong><span>AMD Ryzen 5 7600X</span></div></li>
+                <li><span>💾</span><div><strong>ОЗУ</strong><span>32 GB</span></div></li>
+                <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat Luna</span></div></li>
+            </ul>
+        </article>
+    `);
+
     equipmentGrid.insertAdjacentHTML('beforeend', `
         <article class="equipment-card equipment-card--featured">
             <div class="equipment-card__zone">VIP 3</div>
