@@ -3209,3 +3209,11 @@ body::after {
 /* Busy computers use a solid red icon so their state is clear from a distance. */
 .map-section .pc-card--busy .pc-card__svg rect { fill: #ff3545 !important; stroke: #ff3545 !important; }
 .map-section .pc-card--busy .pc-card__svg path { stroke: #ff3545 !important; }
+
+/* Busy PC: red display fill, unchanged red bezel, original light stand details. */
+.map-section .pc-card--busy .pc-card__svg rect:first-of-type { fill: url(#pcBodyGradient) !important; stroke: #ff3545 !important; }
+.map-section .pc-card--busy .pc-card__svg rect:nth-of-type(2) { fill: #ff3545 !important; stroke: none !important; }
+.map-section .pc-card--busy .pc-card__svg rect:nth-of-type(3) { fill: #d9ecff !important; stroke: none !important; }
+.map-section .pc-card--busy .pc-card__svg rect:nth-of-type(4) { fill: #95bfff !important; stroke: none !important; }
+.map-section .pc-card--busy .pc-card__svg path:nth-of-type(1) { stroke: #BFF2FF !important; }
+.map-section .pc-card--busy .pc-card__svg path:nth-of-type(2) { stroke: #d9f6ff !important; }
