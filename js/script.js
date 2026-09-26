@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     equipmentGrid.children[1]?.insertAdjacentHTML('afterend', `
         <article class="equipment-card">
             <div class="equipment-card__zone">OFFICE</div>
-            <h3 class="equipment-card__title">ПК 29–48 · 20 посадочных мест</h3>
+            <h3 class="equipment-card__title">20 посадочных мест</h3>
             <ul class="equipment-card__list">
                 <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25″ (360 Гц)</span></div></li>
                 <li><span>🖱️</span><div><strong>Мышь</strong><span>Lamzu Atlantis OG V2 Pro (беспроводная)</span></div></li>
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     equipmentGrid.insertAdjacentHTML('beforeend', `
         <article class="equipment-card equipment-card--featured">
             <div class="equipment-card__zone">VIP 3</div>
-            <h3 class="equipment-card__title">ПК 57–61 · 5 посадочных мест</h3>
+            <h3 class="equipment-card__title">5 посадочных мест</h3>
             <ul class="equipment-card__list">
                 <li><span>🖥️</span><div><strong>Монитор</strong><span>ASUS 24.5″ (310 Гц)</span></div></li>
                 <li><span>🖱️</span><div><strong>Мышь</strong><span>HyperX Pulsefire Haste 2 Pro</span></div></li>
