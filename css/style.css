@@ -3235,3 +3235,148 @@ body::after {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Mobile-first layout refinements for the live six-room club map. */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 16px;
+    }
+
+    .section { padding-block: 48px; }
+    .section__header { margin-bottom: 24px; }
+    .section__title { font-size: clamp(1.65rem, 6vw, 2.25rem); line-height: 1.15; }
+    .section__desc { max-width: 42rem; font-size: .95rem; line-height: 1.55; }
+
+    .map-section .container { overflow: visible; }
+    .map-section .availability-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 14px;
+        font-size: .82rem;
+    }
+    .map-section .club-map {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            'standard-plus'
+            'standard'
+            'office'
+            'vip1'
+            'vip2'
+            'vip3';
+        gap: 14px;
+        padding: 8px 0 0;
+    }
+    .map-section .map-zone {
+        min-width: 0;
+        padding: 25px 8px 9px;
+        border-radius: 12px;
+    }
+    .map-section .map-zone__title {
+        max-width: calc(100% - 24px);
+        font-size: .9rem;
+    }
+    .map-section .map-zone__grid,
+    .map-section .map-zone--standard-plus .map-zone__grid,
+    .map-section .map-zone--standard .map-zone__grid,
+    .map-section .map-zone--office .map-zone__grid,
+    .map-section .map-zone--vip1 .map-zone__grid,
+    .map-section .map-zone--vip2 .map-zone__grid,
+    .map-section .map-zone--vip3 .map-zone__grid {
+        width: 100%;
+        max-width: none;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: none;
+        gap: 7px;
+        margin: 0;
+    }
+    .map-section .map-zone--standard .pc-card:nth-child(7),
+    .map-section .map-zone--office .pc-card:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .map-section .pc-card {
+        min-width: 0;
+        min-height: 72px;
+        padding: 6px 4px;
+        grid-template-columns: 25px minmax(0, 1fr);
+        grid-template-rows: 1fr auto;
+        gap: 3px;
+        border-radius: 8px;
+    }
+    .map-section .pc-card__icon {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+    }
+    .map-section .pc-card__number {
+        min-width: 0;
+        font-size: .95rem;
+        line-height: 25px;
+    }
+    .map-section .pc-card__status {
+        min-width: 0;
+        grid-column: 1 / -1;
+        overflow-wrap: anywhere;
+        font-size: .58rem;
+        line-height: 1.15;
+    }
+    .map-section .pc-card--busy .pc-card__status {
+        font-size: .72rem;
+        letter-spacing: 0;
+    }
+
+    .tariffs-grid--6 { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .tariffs-grid--6 .tariff-card { min-width: 0; padding: 20px 18px 18px; }
+    .tariffs-grid--6 .tariff-card__header { gap: 10px; }
+    .tariffs-grid--6 .tariff-card__name { font-size: 1.1rem; }
+    .tariffs-grid--6 .tariff-row { gap: 12px; }
+    .tariffs-grid--6 .tariff-row strong { white-space: nowrap; }
+    .tariffs-grid--6 .tariff-card--featured .tariff-card__seats { margin-right: 0; }
+
+    .equipment-grid--4 { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .equipment-card { min-width: 0; padding: 22px 18px; }
+    .equipment-card__title { font-size: 1.1rem; }
+    .equipment-card__list > li { min-width: 0; }
+    .equipment-card__list > li > div { min-width: 0; overflow-wrap: anywhere; }
+
+    .hero { padding: 92px 16px 48px; }
+    .hero__subtitle { max-width: 38rem; font-size: 1rem; line-height: 1.6; }
+    .hero__address { align-items: flex-start; font-size: .9rem; line-height: 1.45; }
+    .nav { width: min(86vw, 340px); max-width: 100vw; }
+    .footer__grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+
+    .modal__content {
+        width: calc(100% - 24px);
+        max-width: 520px;
+        max-height: calc(100dvh - 24px);
+        margin: 12px auto;
+        overflow-y: auto;
+    }
+    .modal__body { padding: 22px 18px; }
+    .pc-modal__specs { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 380px) {
+    .container { padding-inline: 12px; }
+    .section { padding-block: 42px; }
+    .map-section .map-zone__grid,
+    .map-section .map-zone--standard-plus .map-zone__grid,
+    .map-section .map-zone--standard .map-zone__grid,
+    .map-section .map-zone--office .map-zone__grid,
+    .map-section .map-zone--vip1 .map-zone__grid,
+    .map-section .map-zone--vip2 .map-zone__grid,
+    .map-section .map-zone--vip3 .map-zone__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+    .map-section .pc-card { min-height: 70px; }
+    .map-section .pc-card__status { font-size: .56rem; }
+    .tariffs-grid--6 .tariff-card { padding-inline: 16px; }
+    .tariffs-grid--6 .tariff-row { font-size: .92rem; }
+}
