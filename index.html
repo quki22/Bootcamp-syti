@@ -32,7 +32,10 @@
 .gallery--carousel .gallery__item:focus-visible{outline:2px solid #35a7ff;outline-offset:3px}
 @media(max-width:900px){.gallery.gallery--carousel{grid-auto-columns:calc((100% - 1rem)/2);gap:.75rem}.gallery--carousel .gallery__item{height:clamp(190px,42vw,300px)}}
 @media(max-width:560px){.gallery.gallery--carousel{grid-auto-columns:78%;gap:.7rem;margin-right:-1rem;padding-right:1rem}.gallery--carousel .gallery__item{height:clamp(230px,78vw,360px);border-radius:14px}.gallery--carousel .gallery__overlay{opacity:1;padding:.65rem}.gallery--carousel .gallery__zoom{width:1.8rem;height:1.8rem;font-size:1.35rem}}
-@media(prefers-reduced-motion:reduce){.gallery--carousel .gallery__item img,.gallery--carousel .gallery__overlay{transition:none}}
+@media(prefers-reduced-motion:reduce){.gallery--carousel .gallery__item img,.gallery--carousel .gallery__overlay{transition:none}}#galleryCarousel{overflow-y:hidden;scrollbar-width:thin}
+#galleryCarousel::-webkit-scrollbar{height:5px}
+#galleryCarousel::-webkit-scrollbar-track{background:#182334;border-radius:999px}
+#galleryCarousel::-webkit-scrollbar-thumb{background:#35a7ff;border-radius:999px}
 </style>
 </head>
 <body>
