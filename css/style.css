@@ -3205,3 +3205,7 @@ body::after {
 .map-section .map-zone--office .pc-card:nth-child(20) { grid-column: 11; grid-row: 2; }
 .map-section .pc-card { overflow: hidden; }
 .map-section .pc-card__status { min-width: 0; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: clip; }
+
+/* Busy computers use a solid red icon so their state is clear from a distance. */
+.map-section .pc-card--busy .pc-card__svg rect { fill: #ff3545 !important; stroke: #ff3545 !important; }
+.map-section .pc-card--busy .pc-card__svg path { stroke: #ff3545 !important; }
