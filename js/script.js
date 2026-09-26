@@ -273,3 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initScrollReveal();
 });
+
+
+// Характеристики оборудования VIP-залов.
+const VIP_EQUIPMENT = {
+    vip1: { monitor: 'ASUS 25″, 380 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'Logitech G Pro', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4070', cpu: 'Intel Core i5-13400F', ram: '16 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
+    vip2: { monitor: 'Dell Alienware 25″, 500 Гц', mouse: 'Logitech G Pro X Superlight 2 (беспроводная)', keyboard: 'Logitech G Pro', headset: 'Logitech G Pro X2 Lightspeed (беспроводные)', gpu: 'RTX 4070 Ti', cpu: 'Intel Core i7-13700F', ram: '32 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
+    vip3: { monitor: 'ASUS 24.5″, 310 Гц', mouse: 'HyperX Pulsefire Haste 2 Pro', keyboard: 'HyperX Alloy Origins PBT', headset: 'HyperX Cloud Alpha', gpu: 'RTX 5060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat LUNA' }
+};
+COMPUTERS_DATA.forEach(pc => { const equipment = VIP_EQUIPMENT[pc.zoneSlug]; if (equipment) Object.assign(pc, equipment); });
