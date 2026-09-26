@@ -3178,3 +3178,30 @@ body::after {
 .map-section .pc-card__icon { width:28px; height:28px; margin:0; }
 .map-section .pc-card__number { font-size:1.05rem; line-height:28px; }
 .map-section .pc-card__status { grid-column:1 / -1; font-size:.62rem; }
+
+
+/* Office: keep both rows aligned around the central aisle. */
+.map-section .map-zone--office .map-zone__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) minmax(24px, 3fr) repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 82px);
+    max-width: 100%;
+    margin: 0 auto;
+}
+.map-section .map-zone--office .pc-card:nth-child(-n+5) { grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(6) { grid-column: 7; grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(7) { grid-column: 8; grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(8) { grid-column: 9; grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(9) { grid-column: 10; grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(10) { grid-column: 11; grid-row: 1; }
+.map-section .map-zone--office .pc-card:nth-child(11) { grid-column: 1; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(12) { grid-column: 2; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(13) { grid-column: 3; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(14) { grid-column: 4; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(15) { grid-column: 5; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(16) { grid-column: 7; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(17) { grid-column: 8; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(18) { grid-column: 9; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(19) { grid-column: 10; grid-row: 2; }
+.map-section .map-zone--office .pc-card:nth-child(20) { grid-column: 11; grid-row: 2; }
+.map-section .pc-card { overflow: hidden; }
+.map-section .pc-card__status { min-width: 0; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: clip; }
