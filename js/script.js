@@ -271,12 +271,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initGallery();
     initMobileMenu();
     initHeaderScroll();
-    initScrollReveal();
-});
+    initScrollReveal();});
 
-
-// Характеристики оборудования VIP-залов.
-const VIP_EQUIPMENT = {    office: { monitor: 'Dell Alienware 25″, 360 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat Luna' },
+// Характеристики оборудования залов.
+const VIP_EQUIPMENT = {
+    'standard-plus': { monitor: 'Samsung 25″, 240 Гц', mouse: 'Ajazz AJ179 Pro', keyboard: 'HyperX Alloy Origins PBT', headset: 'HyperX Cloud III', gpu: 'RTX 5060', cpu: 'AMD Ryzen 5 7500F', ram: '32 ГБ', chair: 'AndaSeat LUNA' },
+    office: { monitor: 'Dell Alienware 25″, 360 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat Luna' },
 
     vip1: { monitor: 'ASUS 25″, 380 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'Logitech G Pro', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4070', cpu: 'Intel Core i5-13400F', ram: '16 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
     vip2: { monitor: 'Dell Alienware 25″, 500 Гц', mouse: 'Logitech G Pro X Superlight 2 (беспроводная)', keyboard: 'Logitech G Pro', headset: 'Logitech G Pro X2 Lightspeed (беспроводные)', gpu: 'RTX 4070 Ti', cpu: 'Intel Core i7-13700F', ram: '32 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
