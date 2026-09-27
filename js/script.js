@@ -9,7 +9,7 @@
 // 1. АКТУАЛЬНАЯ СХЕМА КЛУБА (61 ПК)
 // ============================================
 const ZONES = [
-    { name: 'Standard+', slug: 'standard-plus', numbers: [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], price: 1000 },
+    { name: 'Standard+', slug: 'standard-plus', numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], price: 1000 },
     { name: 'Standard', slug: 'standard', numbers: [28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16], price: 800 },
     { name: 'Office', slug: 'office', numbers: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39], price: 1100 },
     { name: 'VIP 1', slug: 'vip1', numbers: [49, 50, 51, 52, 53], price: 1200 },
