@@ -17,7 +17,7 @@ const ZONES = [
     { name: 'VIP 3', slug: 'vip3', numbers: [57, 58, 59, 60, 61], price: 1300 }
 ];
 
-const PUBLIC_STATUS_API = 'https://med-shorts-writing-emotional.trycloudflare.com/api/status';
+const PUBLIC_STATUS_API = 'https://oxford-skirts-greeting-pop.trycloudflare.com/api/status';
 
 const COMPUTERS_DATA = ZONES.flatMap(zone => zone.numbers.map((number, index) => ({
     id: number,
