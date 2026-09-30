@@ -2,7 +2,7 @@
  * BOOTCAMP — Computer Club Website JavaScript
  * ============================================
  * Демонстрационная версия. Все данные хранятся в localStorage.
- * Для реального обновления статусов необходимо подключение backend.
+ * Карта клуба показывает залы и игровые места.
  */
 
 // ============================================
@@ -17,8 +17,6 @@ const ZONES = [
     { name: 'VIP 3', slug: 'vip3', numbers: [57, 58, 59, 60, 61], price: 1300 }
 ];
 
-const PUBLIC_STATUS_API = 'https://oxford-skirts-greeting-pop.trycloudflare.com/api/status';
-
 const COMPUTERS_DATA = ZONES.flatMap(zone => zone.numbers.map((number, index) => ({
     id: number,
     number,
@@ -26,7 +24,6 @@ const COMPUTERS_DATA = ZONES.flatMap(zone => zone.numbers.map((number, index) =>
     zone: zone.name,
     zoneSlug: zone.slug,
     slot: index + 1,
-    status: 'unknown',
     price: zone.price,
     cpu: 'Уточните у администратора',
     gpu: 'Уточните у администратора',
@@ -68,7 +65,7 @@ function renderClubMap() {
 function createPcCard(pc) {
     const card = document.createElement('button');
     card.type = 'button';
-    card.className = `pc-card pc-card--${pc.status}`;
+    card.className = 'pc-card pc-card--map';
     card.setAttribute('data-pc-id', pc.id);
     card.style.setProperty('--slot', pc.slot);
     card.setAttribute('aria-label', `${pc.name}, зона ${pc.zone}`);
@@ -94,46 +91,9 @@ function createPcCard(pc) {
             </svg>
         </span>
         <span class="pc-card__number">${pc.number}</span>
-        <span class="pc-card__status">${getPcStatusLabel(pc)}</span>
     `;
     card.addEventListener('click', () => openPcModal(pc));
     return card;
-}
-
-function getPcStatusLabel(pc) {
-    if (pc.status === 'free') return 'Свободен';
-    if (pc.status !== 'busy') return 'Статус неизвестен';
-    if (Number(pc.remainingSeconds) > 360000) return 'ADMIN';
-    if (!Number.isFinite(pc.remainingSeconds)) return 'Занят';
-    const totalMinutes = Math.max(0, Math.floor(pc.remainingSeconds / 60));
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = String(totalMinutes % 60).padStart(2, '0');
-    return `${String(hours).padStart(2, '0')}:${minutes}`;
-}
-
-async function updateAvailability() {
-    const state = document.getElementById('availabilityState');
-    const fallback = document.getElementById('availabilityFallback');
-    const apiUrl = location.hostname === '192.168.10.55' ? '/api/status' : PUBLIC_STATUS_API;
-    try {
-        const response = await fetch(apiUrl, { cache: 'no-store', signal: AbortSignal.timeout(7000) });
-        if (!response.ok) throw new Error('status unavailable');
-        const data = await response.json();
-        if (!data.ok || !Array.isArray(data.computers)) throw new Error('invalid status');
-        const statusByNumber = new Map(data.computers.map(pc => [Number(pc.number), pc]));
-        COMPUTERS_DATA.forEach(pc => {
-            const live = statusByNumber.get(pc.number);
-            if (!live) return;
-            pc.status = live.status;
-            pc.remainingSeconds = live.remainingSeconds;
-        });
-        renderClubMap();
-        if (state) state.textContent = `Обновлено ${new Date(data.updatedAt || Date.now()).toLocaleTimeString('ru-RU')}`;
-        if (fallback) fallback.hidden = true;
-    } catch {
-        if (state) state.textContent = 'Связь временно недоступна — показаны последние данные';
-        if (fallback) fallback.hidden = false;
-    }
 }
 
 // ============================================
@@ -266,8 +226,6 @@ function initScrollReveal() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderClubMap();
-    updateAvailability();
-    setInterval(updateAvailability, 5000);
     initGallery();
     initMobileMenu();
     initHeaderScroll();
