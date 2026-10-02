@@ -162,6 +162,20 @@ function closeModal(modalId) {
 function initGallery() {
     const items = document.querySelectorAll('.gallery__item:not(.gallery__item--placeholder)');
     const modalImg = document.getElementById('galleryModalImage');
+    const rail = document.getElementById('galleryRail');
+    const slider = document.getElementById('gallerySlider');
+
+    if (rail && slider) {
+        const updateSliderBounds = () => {
+            slider.max = String(Math.max(0, rail.scrollWidth - rail.clientWidth));
+            slider.value = String(rail.scrollLeft);
+        };
+        slider.addEventListener('input', () => { rail.scrollLeft = Number(slider.value); });
+        rail.addEventListener('scroll', () => { slider.value = String(rail.scrollLeft); }, { passive: true });
+        window.addEventListener('resize', updateSliderBounds);
+        updateSliderBounds();
+    }
+
     items.forEach(item => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
