@@ -1,0 +1,93 @@
+/* Phone layout for the published BOOTCAMP site and interactive club map. */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 72px; }
+  body { overflow-x: hidden; }
+  .header { padding: 8px 0; background: rgba(6, 10, 18, .94); }
+  .header__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; min-height: 48px; }
+  .header .logo { display: flex; grid-column: 1; grid-row: 1; min-width: 0; }
+  .header .logo__wordmark { display: block; width: min(152px, 46vw); height: auto; }
+  .header__actions { grid-column: 2; grid-row: 1; }
+  .burger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .nav { grid-column: auto; justify-self: auto; width: min(82vw, 320px); height: 100dvh; overflow-y: auto; }
+  .nav__link { min-height: 44px; display: flex; align-items: center; }
+
+  .hero { min-height: 100svh; padding: 92px 0 48px; }
+  .hero__content { width: 100%; }
+  .hero__logo { width: min(270px, 74vw); }
+  .hero__subtitle { font-size: 1rem; line-height: 1.55; }
+  .hero__buttons { margin-bottom: 26px; }
+  .hero__buttons .btn { min-height: 48px; }
+  .hero__stats { gap: 8px; padding: 12px 8px; border-radius: 16px; }
+  .hero__stat-number { font-size: 1.4rem; }
+  .hero__stat-label { font-size: .7rem; line-height: 1.25; }
+  .hero__address { max-width: 100%; line-height: 1.4; text-align: left; }
+  .hero__scroll { display: none; }
+
+  .section { padding: 56px 0; }
+  .section__header { margin-bottom: 28px; }
+  .section__title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .tariffs-grid--6, .equipment-grid--4 { grid-template-columns: minmax(0, 1fr); }
+  .tariffs-grid--6 .tariff-card { min-height: 0; padding: 20px 18px; }
+  .tariffs-grid--6 .tariff-card__header { padding-right: 50px; }
+  .tariffs-grid--6 .tariff-row { gap: 8px; }
+  .tariffs-grid--6 .tariff-row strong { white-space: nowrap; font-size: 1rem; }
+  .equipment-card { min-width: 0; }
+  .contacts-grid, .footer__grid { grid-template-columns: minmax(0, 1fr); }
+  .contacts-info, .contacts-map { min-width: 0; }
+  .contacts-map--embedded, .contacts-map__iframe { min-height: 380px; }
+  .contacts-map__panel { gap: 10px; }
+  .footer__grid { padding: 22px 18px; }
+  .modal__content--gallery { max-width: calc(100vw - 24px); margin: 12px; padding: 8px; }
+  .modal__image { max-width: calc(100vw - 44px); max-height: 80dvh; }
+
+  #clubMap.bc-map { min-width: 0; width: 100%; border-radius: 16px; }
+  #clubMap .bc-topbar { display: block; padding: 16px; }
+  #clubMap .bc-topbar strong { font-size: 1rem; }
+  #clubMap .bc-topbar small { font-size: .78rem; }
+  #clubMap .bc-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 14px; }
+  #clubMap .bc-tab { min-width: 0; min-height: 44px; padding: 8px 4px; font-size: .78rem; line-height: 1.2; }
+  #clubMap .bc-overview { padding: 10px; }
+  #clubMap .bc-map-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  #clubMap .bc-tile, #clubMap .bc-office-tile, #clubMap .bc-floor-tile { grid-column: auto; }
+  #clubMap .bc-tile-image { height: auto; aspect-ratio: 1.6; }
+  #clubMap .bc-floor-tile .bc-tile-image { height: auto; aspect-ratio: 1.35; }
+  #clubMap .bc-tile-image > img { object-fit: contain; }
+  #clubMap .bc-office-strip { height: 100%; }
+  #clubMap .bc-office-strip img { height: 100%; min-height: 0; }
+  #clubMap .bc-tile-caption { flex-direction: row; align-items: center; padding: 12px; gap: 8px; }
+  #clubMap .bc-tile-caption strong { font-size: .95rem; }
+  #clubMap .bc-tile-caption small { font-size: .75rem; }
+  #clubMap .bc-price { font-size: .78rem; text-align: right; white-space: normal; }
+  #clubMap .bc-overview-note { margin: 12px 3px 4px; font-size: .8rem; }
+  #clubMap .bc-view { padding: 12px; }
+  #clubMap .bc-view-header { align-items: flex-start; }
+  #clubMap .bc-view-title { font-size: 1.2rem; }
+  #clubMap .bc-view-sub { font-size: .78rem; }
+  #clubMap .bc-back { flex: 0 0 auto; min-height: 44px; padding: 8px 10px; font-size: .78rem; }
+  #clubMap .bc-room-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  #clubMap .bc-room-tab { min-width: 0; min-height: 44px; padding: 7px 3px; font-size: .72rem; line-height: 1.2; }
+  #clubMap .bc-view-body, #clubMap .bc-view-body.with-details { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  #clubMap .bc-image-button { height: auto; min-height: 0; aspect-ratio: 1.2; }
+  #clubMap .bc-view[data-zone="standard"] .bc-image-button,
+  #clubMap .bc-view[data-zone="standard-plus"] .bc-image-button { aspect-ratio: .75; max-height: 72svh; }
+  #clubMap .bc-view[data-zone="office"] .bc-image-button { aspect-ratio: 1.15; }
+  #clubMap .bc-image-button img { object-fit: contain; }
+  #clubMap .bc-scene-label { top: 8px; left: 8px; padding: 6px 8px; font-size: .72rem; }
+  #clubMap .bc-floor-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+  #clubMap .bc-floor-marker { position: static; display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 44px; padding: 8px; font-size: .82rem; text-align: center; }
+  #clubMap .bc-details { padding: 16px; }
+  #clubMap .bc-details h3 { font-size: 1.15rem; }
+  #clubMap .bc-close { min-width: 44px; min-height: 44px; }
+  #clubMap .bc-specs div { grid-template-columns: minmax(78px, 34%) minmax(0, 1fr); gap: 9px; font-size: .84rem; }
+  #clubMap .bc-tariff { min-width: 0; }
+  #clubMap .bc-tariff small { font-size: .75rem; }
+  #clubMap .bc-tariff strong { font-size: .9rem; }
+  #clubMap .bc-flight { display: none; }
+}
+
+@media (max-width: 380px) {
+  #clubMap .bc-tile-caption { align-items: flex-start; flex-direction: column; }
+  #clubMap .bc-price { text-align: left; }
+  #clubMap .bc-view-header { flex-wrap: wrap; }
+  #clubMap .bc-room-tab { font-size: .68rem; }
+}

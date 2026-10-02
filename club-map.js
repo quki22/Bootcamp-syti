@@ -12,7 +12,7 @@ function initBootcampMap() {
   let current = null, room = 0, details = false, pc = null, filter = 'all';
   const money = n => new Intl.NumberFormat('ru-RU').format(n);
   const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const asset = key => `${assets}${key}.webp`;
+  const asset = key => `${assets}${key}.webp?v=20261002-mobile`;
   root.innerHTML = `<header class="bc-topbar"><div><strong>Карта клуба</strong><small>61 компьютер · 6 залов</small></div><nav class="bc-tabs" aria-label="Выбор этажа"><button class="bc-tab" data-filter="all" aria-pressed="true">Все залы</button><button class="bc-tab" data-filter="first" aria-pressed="false">1 этаж</button><button class="bc-tab" data-filter="second" aria-pressed="false">2 этаж</button></nav></header><div class="bc-overview"><div class="bc-map-grid"></div><p class="bc-overview-note">Нажми на зал, чтобы приблизить его. Ещё одно нажатие — характеристики и тарифы.</p></div><section class="bc-view" hidden aria-label="Выбранный зал"></section>`;
   const overview=root.querySelector('.bc-overview'),grid=root.querySelector('.bc-map-grid'),view=root.querySelector('.bc-view');
   function overviewRender(){
@@ -28,10 +28,11 @@ function initBootcampMap() {
     const z=zones[current],floor=current.startsWith('standard');
     const image=current==='office'?'office'+(room+1):images[current];
     const numbers=current==='office'?officeNumbers():[...z.numbers].sort((a,b)=>a-b);
-    const floorMarkers=floor?`<button class="bc-floor-marker bc-floor-marker-standard" data-switch="standard" aria-label="Открыть Standart">Standart →</button><button class="bc-floor-marker bc-floor-marker-plus" data-switch="standard-plus" aria-label="Открыть Standart плюс">← Standart +</button>`:'';
+    const floorMarkers=floor?`<div class="bc-floor-choices" aria-label="Зоны второго этажа"><button class="bc-floor-marker bc-floor-marker-standard" data-switch="standard" aria-label="Открыть Standart">Standart →</button><button class="bc-floor-marker bc-floor-marker-plus" data-switch="standard-plus" aria-label="Открыть Standart плюс">← Standart +</button></div>`:'';
+    view.dataset.zone=current;
     view.innerHTML=`<div class="bc-view-header"><div><h2 class="bc-view-title">${names[current]}</h2><div class="bc-view-sub">${current==='office'?'Три комнаты — один зал':floor?'Второй этаж':z.numbers.length+' игровых мест'}</div></div><button class="bc-back" data-back>← Все залы</button></div>
     ${current==='office'?`<nav class="bc-room-tabs" aria-label="Комнаты office">${['Первая комната','Вторая комната','Третья комната'].map((n,i)=>`<button class="bc-room-tab" data-room="${i}" aria-pressed="${i===room}">${n}</button>`).join('')}</nav>`:''}
-    <div class="bc-view-body ${details?'with-details':''}"><div class="bc-scene"><button class="bc-image-button" data-details aria-label="Открыть характеристики и тарифы ${names[current]}"><img src="${asset(image)}" alt="${names[current]}${current==='office'?', комната '+(room+1):''}">${floorMarkers}</button><span class="bc-scene-label">${names[current]} · ${money(z.price)} ₸ / час</span></div>${details?renderDetails(z):''}</div>`;
+    <div class="bc-view-body ${details?'with-details':''}"><div class="bc-scene"><button class="bc-image-button" data-details aria-label="Открыть характеристики и тарифы ${names[current]}"><img src="${asset(image)}" alt="${names[current]}${current==='office'?', комната '+(room+1):''}"></button>${floorMarkers}<span class="bc-scene-label">${names[current]} · ${money(z.price)} ₸ / час</span></div>${details?renderDetails(z):''}</div>`;
   }
   function renderDetails(z){
     const fields={gpu:'Видеокарта',cpu:'Процессор',ram:'Память',monitor:'Монитор',mouse:'Мышь',keyboard:'Клавиатура',headset:'Наушники',chair:'Кресло'};
@@ -40,6 +41,7 @@ function initBootcampMap() {
   function openZone(key,button){
     const from=button?.querySelector('img');const rect=from?.getBoundingClientRect();const src=from?.src;
     current=key;room=0;details=true;pc=null;overview.hidden=true;view.hidden=false;renderView();
+    if(innerWidth<761)root.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
     const target=view.querySelector('.bc-image-button img');
     if(rect&&src&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
       const end=target.getBoundingClientRect(),fly=new Image();fly.src=src;fly.className='bc-flight';
