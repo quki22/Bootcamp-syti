@@ -1,4 +1,11 @@
 /* Phone layout for the published BOOTCAMP site and interactive club map. */
+.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1160px; gap: 16px; }
+.gallery__item { aspect-ratio: 4 / 3; display: grid; place-items: center; background: #0a1019; }
+.gallery__item img { width: 100%; height: 100%; object-fit: contain; }
+.gallery__overlay { opacity: 1; align-items: flex-end; justify-content: space-between; gap: 8px; padding: 12px; background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,.68) 100%); }
+.gallery__caption { color: #f0f6ff; font-size: .86rem; font-weight: 650; text-align: left; text-shadow: 0 1px 8px #000; }
+.gallery__zoom { flex: 0 0 auto; }
+@media (max-width: 760px) { .gallery { grid-template-columns: minmax(0, 1fr); gap: 12px; } .gallery__item { aspect-ratio: 1.2; } .gallery__caption { font-size: .82rem; } }
 @media (max-width: 760px) {
   html { scroll-padding-top: 72px; }
   body { overflow-x: hidden; }
