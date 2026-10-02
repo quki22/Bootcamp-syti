@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -16,29 +16,11 @@
     <title>BOOTCAMP — компьютерный клуб в Петропавловске</title>
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=20260927-map-clean">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
-/* Compact club photo carousel for desktop and touch screens. */
-#galleryGrid{display:none!important}
-.gallery.gallery--carousel{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-template-rows:1fr;grid-auto-columns:calc((100% - 2rem)/3);gap:1rem;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#35a7ff #182334;padding:0 0 .75rem}
-.gallery--carousel .gallery__item{position:relative;display:block;width:100%;height:clamp(190px,22vw,310px);padding:0;border:1px solid rgba(122,153,192,.2);border-radius:16px;overflow:hidden;background:#101722;cursor:zoom-in;scroll-snap-align:start}
-.gallery--carousel .gallery__item img{display:block;width:100%;height:100%;object-fit:cover;transition:none}
-.gallery--carousel .gallery__item:hover img{transform:none}
-.gallery--carousel .gallery__overlay{position:absolute;inset:auto 0 0;display:flex;justify-content:flex-end;padding:2.5rem .85rem .75rem;background:linear-gradient(transparent,rgba(4,9,17,.72));opacity:0;transition:opacity .2s ease}
-.gallery--carousel .gallery__item:hover .gallery__overlay,.gallery--carousel .gallery__item:focus-visible .gallery__overlay{opacity:1}
-.gallery--carousel .gallery__zoom{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;color:#fff;background:rgba(19,35,55,.88);font-size:1.5rem}
-.gallery--carousel .gallery__item:focus-visible{outline:2px solid #35a7ff;outline-offset:3px}
-@media(max-width:900px){.gallery.gallery--carousel{grid-auto-columns:calc((100% - 1rem)/2);gap:.75rem}.gallery--carousel .gallery__item{height:clamp(190px,42vw,300px)}}
-@media(max-width:560px){.gallery.gallery--carousel{grid-auto-columns:78%;gap:.7rem;margin-right:-1rem;padding-right:1rem}.gallery--carousel .gallery__item{height:clamp(230px,78vw,360px);border-radius:14px}.gallery--carousel .gallery__overlay{opacity:1;padding:.65rem}.gallery--carousel .gallery__zoom{width:1.8rem;height:1.8rem;font-size:1.35rem}}
-@media(prefers-reduced-motion:reduce){.gallery--carousel .gallery__item img,.gallery--carousel .gallery__overlay{transition:none}}#galleryCarousel{overflow-y:hidden;scrollbar-width:thin}
-#galleryCarousel::-webkit-scrollbar{height:5px}
-.map-section .pc-card--map{background:#101a29;border-color:rgba(66,165,255,.2);color:#e7eef8;cursor:pointer}
-.map-section .pc-card--map:hover{background:#17263a;border-color:rgba(66,165,255,.45);box-shadow:0 8px 24px rgba(0,0,0,.22);transform:translateY(-2px)}
-#galleryCarousel::-webkit-scrollbar-track{background:#182334;border-radius:999px}
-#galleryCarousel::-webkit-scrollbar-thumb{background:#35a7ff;border-radius:999px}
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="club-map.css">
 </head>
 <body>
 
@@ -255,11 +237,11 @@
                 <div class="equipment-grid equipment-grid--4">
                     <article class="equipment-card">
                         <div class="equipment-card__zone">Standard</div>
-                        <h3 class="equipment-card__title">13 посадочных мест</h3>
+                        <h3 class="equipment-card__title">20 посадочных мест</h3>
                         <ul class="equipment-card__list">
-                            <li><span>🖥️</span><div><strong>Монитор</strong><span>25" SAMSUNG 240HZ</span></div></li>
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>ASUS 27" (280 Hz)</span></div></li>
                             <li><span>🖱️</span><div><strong>Мышь</strong><span>SteelSeries Aerox 3</span></div></li>
-                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>Ajazz AK820</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins Core PBT</span></div></li>
                             <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud III</span></div></li>
                             <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4060</span></div></li>
                             <li><span>⚡</span><div><strong>Процессор</strong><span>Intel Core i5-12400F</span></div></li>
@@ -270,16 +252,16 @@
 
                     <article class="equipment-card">
                         <div class="equipment-card__zone">Standard+</div>
-                        <h3 class="equipment-card__title">15 посадочных мест</h3>
+                        <h3 class="equipment-card__title">20 посадочных мест</h3>
                         <ul class="equipment-card__list">
-                            <li><span>🖥️</span><div><strong>Монитор</strong><span>ASUS 27" (280 Hz)</span></div></li>
-                            <li><span>🖱️</span><div><strong>Мышь</strong><span>Ajazz AJ179 Pro</span></div></li>
-                                                        <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins PBT</span></div></li>
-                            <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud III</span></div></li>
-                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 5060</span></div></li>
-                            <li><span>⚡</span><div><strong>Процессор</strong><span>AMD Ryzen 5 7500F</span></div></li>
+                            <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25" (360 Hz)</span></div></li>
+                            <li><span>🖱️</span><div><strong>Мышь</strong><span>Lamzu Atlantis OG V2 Pro (беспроводные)</span></div></li>
+                            <li><span>⌨️</span><div><strong>Клавиатура</strong><span>HyperX Alloy Origins Core PBT</span></div></li>
+                            <li><span>🎧</span><div><strong>Наушники</strong><span>HyperX Cloud Alpha (беспроводные)</span></div></li>
+                            <li><span>🎮</span><div><strong>Видеокарта</strong><span>RTX 4060 Ti</span></div></li>
+                            <li><span>⚡</span><div><strong>Процессор</strong><span>AMD Ryzen 5 7600X</span></div></li>
                             <li><span>💾</span><div><strong>ОЗУ</strong><span>32 GB</span></div></li>
-                            <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat LUNA</span></div></li>
+                            <li><span>🪑</span><div><strong>Кресло</strong><span>AndaSeat Luna</span></div></li>
                         </ul>
                     </article>
 
@@ -300,7 +282,7 @@
 
                     <article class="equipment-card equipment-card--elite">
                         <div class="equipment-card__zone">VIP 2</div>
-                        <h3 class="equipment-card__title">3 посадочных мест</h3>
+                        <h3 class="equipment-card__title">3 посадочных места</h3>
                         <ul class="equipment-card__list">
                             <li><span>🖥️</span><div><strong>Монитор</strong><span>Dell Alienware 25" (500 Hz)</span></div></li>
                             <li><span>🖱️</span><div><strong>Мышь</strong><span>Logitech G Pro X Superlight 2 (беспроводные)</span></div></li>
@@ -326,49 +308,7 @@
                 </div>
 
                 
-                <div class="gallery gallery--carousel" id="galleryCarousel" aria-label="Фотографии компьютерного клуба BOOTCAMP">
-  <button class="gallery__item" type="button" data-index="0" aria-label="Открыть фотографию 1">
-    <img src="images/gallery-01.jpg" alt="Зона отдыха и ресепшен компьютерного клуба BOOTCAMP" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="1" aria-label="Открыть фотографию 2">
-    <img src="images/gallery-02.jpg" alt="Игровые компьютеры и оборудование Standard+" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="2" aria-label="Открыть фотографию 3">
-    <img src="images/gallery-03.jpg" alt="Экран с картой занятости клуба над стойкой ресепшена" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="3" aria-label="Открыть фотографию 4">
-    <img src="images/gallery-04.jpg" alt="Ряд игровых компьютеров в зале Standard" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="4" aria-label="Открыть фотографию 5">
-    <img src="images/gallery-05.jpg" alt="Ресепшен, карта клуба и витрина с напитками" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="5" aria-label="Открыть фотографию 6">
-    <img src="images/gallery-06.jpg" alt="VIP-зона клуба с отдельными комнатами" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="6" aria-label="Открыть фотографию 7">
-    <img src="images/gallery-07.jpg" alt="Игровое место и RGB-клавиатура в зале" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="7" aria-label="Открыть фотографию 8">
-    <img src="images/gallery-08.jpg" alt="Игровая комната с компьютерами и креслами" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="8" aria-label="Открыть фотографию 9">
-    <img src="images/gallery-09.jpg" alt="Ряд игровых мест в зале Standard" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-  <button class="gallery__item" type="button" data-index="9" aria-label="Открыть фотографию 10">
-    <img src="images/gallery-10.jpg" alt="Компьютеры в VIP 3" loading="lazy" decoding="async">
-    <span class="gallery__overlay" aria-hidden="true"><span class="gallery__zoom">⌕</span></span>
-  </button>
-</div>
-<div class="gallery" id="galleryGrid">
+                <div class="gallery" id="galleryGrid">
                     <div class="gallery__item" data-index="0">
                         <img src="images/club-real-1.jpg" alt="Ресепшен и входная зона компьютерного клуба BOOTCAMP" loading="lazy">
                         <div class="gallery__overlay"><span class="gallery__zoom">🔍</span></div>
@@ -445,23 +385,22 @@
                     <div class="contacts-map contacts-map--embedded">
                         <iframe
                             class="contacts-map__iframe"
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=69.117429%2C54.858689%2C69.137429%2C54.868689&amp;layer=mapnik&amp;marker=54.863716%2C69.127386"
-                            title="Карта клуба BOOTCAMP, ул. Сабита Муканова, 55"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=69.117429%2C54.858689%2C69.137429%2C54.868689&amp;layer=mapnik&amp;marker=54.863689%2C69.127429"
+                            title="Карта расположения компьютерного клуба BOOTCAMP"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             allowfullscreen>
                         </iframe>
-                        
                         <div class="contacts-map__panel">
                             <div>
                                 <span class="contacts-map__badge">BOOTCAMP</span>
                                 <h3>Сабита Муканова, 55</h3>
                                 <p>Петропавловск, Казахстан</p>
                             </div>
-                            <a href="https://2gis.kz/petropavlovsk/firm/70000001081812786"
+                            <a href="https://go.2gis.com/q2POe"
                                class="contacts-map__route"
                                target="_blank"
-                               rel="noopener">Карточка клуба в 2ГИС →</a>
+                               rel="noopener">Открыть в 2GIS →</a>
                         </div>
                     </div>
                 </div>
@@ -537,10 +476,11 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=20260930-map-only"></script>
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
-    
+    <script src="js/script.js"></script>
+    <script src="map-data.js"></script>
+    <script src="club-map.js"></script>
 </body>
 </html>
-
 
