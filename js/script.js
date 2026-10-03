@@ -9,8 +9,8 @@
 // 1. АКТУАЛЬНАЯ СХЕМА КЛУБА (61 ПК)
 // ============================================
 const ZONES = [
-    { name: 'Standard+', slug: 'standard-plus', numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], price: 1000 },
-    { name: 'Standard', slug: 'standard', numbers: [28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16], price: 800 },
+    { name: 'Standart +', slug: 'standard-plus', numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], price: 1000 },
+    { name: 'Standart', slug: 'standard', numbers: [28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16], price: 800 },
     { name: 'Office', slug: 'office', numbers: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39], price: 1100 },
     { name: 'VIP 1', slug: 'vip1', numbers: [49, 50, 51, 52, 53], price: 1200 },
     { name: 'VIP 2', slug: 'vip2', numbers: [54, 55, 56], price: 1700 },
@@ -247,8 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Характеристики оборудования залов.
 const VIP_EQUIPMENT = {
-    standard: { monitor: 'Samsung 25″, 240 Гц', mouse: 'SteelSeries Aerox 3', keyboard: 'Ajazz AK820', headset: 'HyperX Cloud III', gpu: 'RTX 4060', cpu: 'Intel Core i5-12400F', ram: '16 ГБ', chair: 'DXRacer Prince' },
-    'standard-plus': { monitor: 'ASUS 27″, 280 Гц', mouse: 'Ajazz AJ179 Pro', keyboard: 'HyperX Alloy Origins PBT', headset: 'HyperX Cloud III', gpu: 'RTX 5060', cpu: 'AMD Ryzen 5 7500F', ram: '32 ГБ', chair: 'AndaSeat LUNA' },
+    standard: { monitor: 'ASUS 27" (280 Hz)', mouse: 'SteelSeries Aerox 3', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud III', gpu: 'RTX 4060', cpu: 'Intel Core i5-12400F', ram: '16 GB', chair: 'DXRacer Prince' },
+    'standard-plus': { monitor: 'Dell Alienware 25" (360 Hz)', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводные)', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 GB', chair: 'AndaSeat Luna' },
     office: { monitor: 'Dell Alienware 25″, 360 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'HyperX Alloy Origins Core PBT', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4060 Ti', cpu: 'AMD Ryzen 5 7600X', ram: '32 ГБ', chair: 'AndaSeat Luna' },
 
     vip1: { monitor: 'ASUS 25″, 380 Гц', mouse: 'Lamzu Atlantis OG V2 Pro (беспроводная)', keyboard: 'Logitech G Pro', headset: 'HyperX Cloud Alpha (беспроводные)', gpu: 'RTX 4070', cpu: 'Intel Core i5-13400F', ram: '16 ГБ', chair: 'AndaSeat Kaiser 2 Big Pillow' },
