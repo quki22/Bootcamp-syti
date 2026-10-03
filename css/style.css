@@ -936,6 +936,48 @@ ul, ol {
     color: var(--text);
 }
 
+/* Match the actual markup used by the equipment lists. */
+.equipment-card__list > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 10px 14px;
+    background: var(--surface-light);
+    border-radius: var(--radius-xs);
+}
+
+.equipment-card__list > li > span:first-child {
+    flex: 0 0 auto;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.equipment-card__list > li > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 3px;
+    overflow-wrap: anywhere;
+}
+
+.equipment-card__list > li > div > strong {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.equipment-card__list > li > div > span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.equipment-card__list > li:hover {
+    background: var(--surface-hover);
+}
+
 .equipment-card__note {
     margin-top: 16px;
     font-size: 0.8rem;
